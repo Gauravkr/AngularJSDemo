@@ -1,0 +1,24 @@
+<!--Directive for Movie Search panel-->
+<form name="movieSearchForm" role="form" ng-submit="submit(formInfo)" novalidate>
+  <div class="form-group">
+    <label for="inputMovieName">Movie Name</label></br>
+    <input type="text" autofocus class="form-control" id="inputMovieName" placeholder="Enter Movie Name" ng-model="inputMovieName"></br>
+    <label for="inputMovieReleaseYear">Movie Release Year</label></br>
+    <input type="text" autofocus class="form-control" id="inputMovieReleaseYear" placeholder="Enter Release Year" ng-model="inputMovieReleaseYear"></br>
+    <label class="control-label" >Movie Plot</label></br>
+    <select style="width: 100px;"
+            ng-model="inputMoviePlot"
+            ng-options="option.name for option in moviePlotOptions">
+    </select></br>
+    <label class="control-label" >Use Promise Example</label></br>
+    <select style="width: 100px;"
+            ng-model="promiseExampleID"
+            ng-options="option.name for option in promiseExampleIDOptions">
+    </select>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <button id="searchBtn" type="submit" class="btn btn-primary col-md-2">Search</button>
+    </div>
+  </div>
+</form>
