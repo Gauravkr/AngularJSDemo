@@ -5,20 +5,26 @@
     <input type="text" autofocus class="form-control" id="inputMovieName" placeholder="Enter Movie Name" ng-model="inputMovieName"></br>
     <label for="inputMovieReleaseYear">Movie Release Year</label></br>
     <input type="text" autofocus class="form-control" id="inputMovieReleaseYear" placeholder="Enter Release Year" ng-model="inputMovieReleaseYear"></br>
-    <label class="control-label" >Movie Plot</label></br>
-    <select style="width: 100px;"
-            ng-model="inputMoviePlot"
-            ng-options="option.name for option in moviePlotOptions">
-    </select></br>
-    <label class="control-label" >Use Promise Example</label></br>
-    <select style="width: 100px;"
-            ng-model="promiseExampleID"
-            ng-options="option.name for option in promiseExampleIDOptions">
-    </select>
+    <div class="col-sm-3 no-padding">
+      <label class="control-label" >Movie Plot</label></br>
+      <select style="width: 100px;"
+              ng-model="inputMoviePlot"
+              ng-options="option.name for option in moviePlotOptions">
+      </select></br>
+      <label class="control-label" >Use Promise Example</label></br>
+      <select style="width: 100px;"
+              ng-model="promiseExampleID"
+              ng-options="option.name for option in promiseExampleIDOptions">
+      </select>
+    </div>
+    <div class="col-sm-9 table-bordered">
+      <p class="alert-info">{{promiseExampleDescription[promiseExampleID.value-1]}}</p>
+    </div>
   </div>
+  <div class="clearfix"></div>
   <div class="form-group">
     <div class="row">
-      <button id="searchBtn" type="submit" class="btn btn-primary col-md-2">Search</button>
+      <button id="searchBtn" type="submit" class="btn btn-primary col-md-2 search-btn">Search</button>
     </div>
   </div>
 </form>

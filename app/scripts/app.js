@@ -18,7 +18,7 @@ angular
     'ngTouch',
     'ui.router'
   ])
-  .config(function ($routeProvider, $stateProvider, $urlRouterProvider) {
+  .config(function ($routeProvider) {
       $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

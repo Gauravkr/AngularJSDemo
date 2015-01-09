@@ -29,8 +29,25 @@ angular.module('helloApp')
     }];
 
 
+    $scope.promiseExampleDescription =[];
+    $scope.promiseExampleDescription[0] = "Most simple promise implementation where it simply call the api and return " +
+    "back the response to the promise. The downside of blindly passing your $http.get promise back to the controller " +
+    "is that the controller has to deal with the result itself. even $http errors need to handle at the controller " +
+    "level, which is not recommended.";
+
+    $scope.promiseExampleDescription[1] ="In this approach we have refactor the service to use promise internally ," +
+    "so we can handle the result in the service and bring back the payload we want, So that we can control both " +
+    "the input and output of the call, log errors appropriately, transform the output, and even provide status " +
+    "updates with deferred.notify(msg).";
+    $scope.promiseExampleDescription[2] = "Without creating our own deferred object managing a separate promise " +
+    "by transforming your response within a then method and returning a transformed result to the caller " +
+    "automatically. So, we've reduced the amount of code we have to write to achieve the same result, " +
+    "and we don't have to worry about what happens when the Ajax call fils - it will just fail before " +
+    "calling the chained then function."
+
     $scope.inputMoviePlot = $scope.moviePlotOptions[0];
     $scope.promiseExampleID = $scope.promiseExampleIDOptions[0];
+
     //call the service as promise
     $scope.submit = function() {
       if($scope.promiseExampleID.value == 1){
