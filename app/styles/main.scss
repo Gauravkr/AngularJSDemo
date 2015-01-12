@@ -110,3 +110,22 @@ tr.spaceUnder > td
   padding-bottom: 1em;
   padding-right: 2em;
 }
+.table-outer-border{
+  border: 1px solid #ddd;
+}
+.header-info{
+  padding: 5px;
+  border-radius: 9px;
+}
+.form-control-info{
+  border-radius: 9px;
+}
+.form-control-label{
+  padding: 4px;
+  margin-top: 2px;
+}
+.btnInvalid{
+  background: red !important;
+  border-color: red;
+  cursor: not-allowed;
+}

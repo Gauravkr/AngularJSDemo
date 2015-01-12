@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'ngMockE2E'
+    'ngMockE2E',
+    'ui.bootstrap'
   ]).run(
     function($httpBackend) {
       /*var phones = [{name: 'phone1'}, {name: 'phone2'}];
@@ -144,6 +145,9 @@ angular
       }).when('/server', {
           templateUrl: 'views/serverInteraction.html',
           controller: 'ServerCtrl'
+        }).when('/formDemo', {
+          templateUrl: 'views/formDemo.html',
+          controller: 'FormDemoCtrl'
         })
       .otherwise({
         redirectTo: '/'

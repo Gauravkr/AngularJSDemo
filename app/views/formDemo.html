@@ -1,0 +1,89 @@
+<div>
+  <h3 class="label-info text-center header-info"><ins>Help Desk Form</ins></h3>
+  <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+  <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+  <form name="helpForm" novalidate role="form">
+    <div class="form-group">
+      <!--<h5 class="label-info form-control-info"><label class="form-control-label" for="name">Your Name </label></h5>-->
+      <label class="form-control-label" for="name">Your Name </label>
+      <span class="label label-danger" auto data-ng-show="helpForm.name.$dirty && helpForm.name.$error.required">Required !</span>
+      <input type="text" name="name" data-ng-model="name" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <!--<h5 class="label-info form-control-info"><label class="form-control-label"  for="email">Your E-mail address</label></h5>-->
+      <label class="form-control-label"  for="email">Your E-mail address</label>
+      <span class="label label-danger" data-ng-show="helpForm.email.$dirty && helpForm.email.$error.required">Required!</span>
+      <span class="label label-danger" data-ng-show="helpForm.email.$dirty && helpForm.$error.email">Invalid email!</span>
+      <input type="email" name="email" data-ng-model="email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <!--<h5 class="label-info form-control-info"><label class="form-control-label"  for="subjectList">What is the nature of your request?</label></h5>-->
+      <label class="form-control-label"  for="subjectList">What is the nature of your request?</label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.subjectList.$error.required">Required!</span>
+      <select name="subjectList" data-ng-model="subjectList" data-ng-options="option.value for option in subjectListOptions" class="form-control" required>
+        <option value=""></option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <!--<h5 class="label-info form-control-info"><label class="form-control-label"  for="url">URL of Relevant Page</label></h5>-->
+      <label class="form-control-label"  for="url">URL of Relevant Page</label>
+      <span class="label label-danger" data-ng-show="helpForm.url.$dirty && helpForm.$error.url">Invalid URL format!</span>
+      <input type="url" name="url" data-ng-model="url" class="form-control" />
+    </div>
+    <div class="form-group">
+      <!--<h5 class="label-info form-control-info"><label class="form-control-label"  for="dateofIssue">Issue Date</label></h5>-->
+      <label class="form-control-label"  for="dateofIssue">Issue Date</label>
+      <div class='input-group date'>
+        <input type="text"
+               name="dateofIssue"
+               class="form-control"
+               id="dateofIssue"
+               placeholder="mm/dd/yyyy"
+               ng-model="formInfo.dateofIssue"
+               datepicker-popup="{{format}}"
+               is-open="opened"
+               datepicker-options="dateOptions"
+               close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <!--<h5 class="label-info form-control-info"><label class="form-control-label"  for="comments">Description</label></h5>-->
+      <label class="form-control-label"  for="comments">Description</label>
+      <span class="label label-danger" data-ng-show="helpForm.comments.$dirty && helpForm.comments.$error.required">Required!</span>
+      <span class="label label-danger" data-ng-show="helpForm.comments.$dirty && helpForm.comments.$error.minlength">Minimum length 5 !</span>
+      <span class="label label-danger" data-ng-show="helpForm.comments.$dirty && helpForm.comments.$error.maxlength">Maximum length 20 !</span>
+      <textarea name="comments" data-ng-model="comments" class="form-control" required ng-minlength="5" ng-Maxlength="20"></textarea>
+    </div>
+    <div class="form-group">
+      <!--<h5 class="label-info form-control-info"><label class="form-control-label">Complexity of Issue</label></h5>-->
+      <label class="form-control-label">Complexity of Issue</label>
+      <table class="table table-outer-border">
+        <tr>
+          <td width="40%">
+            <label for="highRadio">High:</label>
+            <input id="highRadio" type="radio" ng-model="issueComplexity" value="high" /><br />
+          </td>
+          <td width="40%">
+            <label for="mediumRadio">Medium:</label>
+            <input id="mediumRadio" type="radio" ng-model="issueComplexity" value="medium" /><br />
+          </td>
+          <td>
+            <label for="lowRadio">Low:</label>
+            <input id="lowRadio" type="radio" ng-model="issueComplexity" value="low" /><br />
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <button type='reset' data-ng-click="resetForm(helpForm)" class="btn btn-warning">Reset</button>
+    <button ng-class="{ btnInvalid:helpForm.$invalid }" data-ng-disabled="isFormValid" data-ng-click="submit(helpForm)" class="btn btn-info">Submit</button>
+    <span class="label label-info" data-ng-show="helpForm.$invalid">Submit functionality is disabled till form is not Valid</span>
+  </form>
+</div>

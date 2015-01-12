@@ -1,7 +1,9 @@
 {
   "name": "hello",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular-mocks": "^1.3.8"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^2.0.0",
