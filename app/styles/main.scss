@@ -98,3 +98,15 @@ body {
   margin-top: 10px;
   margin-left: 15px;
 }
+.customer-Table{
+  margin-top: 10px;
+}
+.customer-Table th{
+  text-align: center;
+}
+/* Apply padding to td elements that are direct children of the tr element. */
+tr.spaceUnder > td
+{
+  padding-bottom: 1em;
+  padding-right: 2em;
+}

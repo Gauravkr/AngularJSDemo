@@ -52,7 +52,7 @@ angular.module('helloApp')
     $scope.submit = function() {
       if($scope.promiseExampleID.value == 1){
         //First Approach
-        var promise = myService.getMovie($scope.inputMovieName, $scope.inputMovieReleaseYear,$scope.inputMoviePlot);
+        var promise = myService.getMovie($scope.inputMovieName, $scope.inputMovieReleaseYear,$scope.inputMoviePlot.value);
         promise.then(
           function(result){
             myService.data.movieData = result.data;
