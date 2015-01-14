@@ -9,13 +9,13 @@ simply $http  or by using deferred  , handling  promises.
 ==================
 Technolgy Used
 ==================
-    1. NodeJS
+    1. [NodeJS](http://nodejs.org/)
     2. Bower package ( npm install bower -g )
-    3. Ruby refer : (https://www.ruby-lang.org/en/documentation/installation/)
+    3. [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
     4. SASS (gem install sass OR  sudo gem install sass)
     5. Compass (gem install compass OR sudo gem install compass)
-    6. AngularJs (https://angularjs.org/)
-    7. Bootstrap (http://getbootstrap.com/2.3.2/)
+    6. [AngularJs] (https://angularjs.org/)
+    7. [Bootstrap] (http://getbootstrap.com/2.3.2/)
 
 
 
